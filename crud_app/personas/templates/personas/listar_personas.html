@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Listar personas{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Listar Personas</h1>
+    <ul class="list-group mt-3">
+        {% for persona in personas %}
+        <li class="list-group-item">
+            {{ persona.nombre }} - {{ persona.edad }} años - {{ persona.ciudad }}
+            <a href="{% url 'actualizar_persona' persona.id %}" class="btn btn-primary btn-sm">Actualizar</a>
+            <a href="{% url 'eliminar_persona' persona.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_persona' %}" class="btn btn-success mt-3">Crear Persona</a>
+</div>
+{% endblock %}

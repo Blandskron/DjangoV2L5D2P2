@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Actualizar persona{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title text-center">Actualizar Persona</h1>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad:</label>
+                            <input type="text" class="form-control" id="edad" name="edad">
+                        </div>
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad:</label>
+                            <input type="text" class="form-control" id="ciudad" name="ciudad">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

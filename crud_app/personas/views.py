@@ -47,9 +47,9 @@ def actualizar_persona(request, id):
         return redirect('listar_personas')
     return render(request, 'personas/actualizar_persona.html', {'persona': persona})
 
-def eliminar_persona(request):
+def eliminar_persona(request, id):
+    persona = Persona.objects.get(id=id)
     if request.method == 'POST':
-        id_persona = request.POST['id']
-        Persona.objects.get(id=id_persona).delete()
+        persona.delete()
         return redirect('listar_personas')
     return render(request, 'personas/eliminar_persona.html')

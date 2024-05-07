@@ -11,11 +11,8 @@
                     <h1 class="card-title text-center">Eliminar Persona</h1>
                     <form method="post">
                         {% csrf_token %}
-                        <div class="form-group">
-                            <label for="id">ID de Persona:</label>
-                            <input type="text" class="form-control" id="id" name="id">
-                        </div>
-                        <button type="submit" class="btn btn-danger btn-block">Eliminar</button>
+                        ID de Persona: <input type="text" name="id"><br>
+                        <input type="submit" value="Eliminar">
                     </form>
                 </div>
             </div>

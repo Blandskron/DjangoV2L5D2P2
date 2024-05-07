@@ -10,7 +10,7 @@
         <li class="list-group-item">
             {{ persona.nombre }} - {{ persona.edad }} años - {{ persona.ciudad }}
             <a href="{% url 'actualizar_persona' persona.id %}" class="btn btn-primary btn-sm">Actualizar</a>
-            <a href="{% url 'eliminar_persona' persona.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+            <a href="{% url 'eliminar_persona' persona.pk %}" class="btn btn-danger btn-sm">Eliminar</a>
         </li>
         {% endfor %}
     </ul>
